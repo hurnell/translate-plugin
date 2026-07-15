@@ -16,7 +16,8 @@ class TranslationKeyFinder(
      */
     fun findAll(key: String): List<JsonProperty> {
         val projectDir = project.guessProjectDir() ?: return emptyList()
-        val languages = VfsUtil.findRelativeFile("app/languages", projectDir) ?: return emptyList()
+        val configuredPath = TranslationSettings.getInstance(project).translationDirectory
+        val languages = VfsUtil.findRelativeFile(configuredPath, projectDir) ?: return emptyList()
         val pathSegments = key.split(".")
 
         return languages.children
