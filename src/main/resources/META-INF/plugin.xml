@@ -1,19 +1,29 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>org.jetbrains.plugins.template</id>
-    <name>IntelliJ Platform Plugin Template</name>
-    <vendor>JetBrains</vendor>
+    <id>com.hurnell.translationnavigation</id>
+    <name>Translation Navigation</name>
+    <vendor>Hurnell</vendor>
+
     <description><![CDATA[
-        <p><b>IntelliJ Platform Plugin Template</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
-        <p>The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.</p>
+        <p>Navigate AngularJS translation keys to their JSON definitions.</p>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
+    <depends>com.intellij.modules.xml</depends>
+    <depends>com.intellij.modules.json</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="org.jetbrains.plugins.template.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="org.jetbrains.plugins.template.startup.MyProjectActivity" />
+        <psi.referenceContributor
+                language="XML"
+                implementation="com.hurnell.translationnavigation.TranslationReferenceContributor"/>
+        <gotoDeclarationHandler implementation="com.hurnell.translationnavigation.TranslationGotoDeclarationHandler" />
+        <projectService serviceImplementation="com.hurnell.translationnavigation.TranslationSettings"/>
+
+        <!-- Settings panel interface (appears under Settings/Preferences > Tools) -->
+        <projectConfigurable
+                parentId="tools"
+                instance="com.hurnell.translationnavigation.TranslationSettingsConfigurable"
+                id="com.hurnell.translationnavigation.TranslationSettingsConfigurable"
+                displayName="Translation Navigation" />
     </extensions>
+
 </idea-plugin>

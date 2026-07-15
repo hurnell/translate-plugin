@@ -11,7 +11,8 @@ dependencies {
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {
-        intellijIdea("2025.2.6.2")
+        phpstorm("2025.2.6.1")
+        bundledPlugin("com.intellij.modules.json") // Add this
         testFramework(TestFrameworkType.Platform)
     }
 }
