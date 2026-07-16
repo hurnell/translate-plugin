@@ -59,7 +59,7 @@ Coming soon.
 2. **Settings → Tools → Translation Navigation**.
 3. There you'll find **Translation directory path:**
 4. Here you can change the relative path of your translations directory (default is **app/languages**).
-5. Make sure that the chose path is a relative path! Then click APPLY.
+5. Make sure that the chosen path is a relative path! Then click APPLY.
 
 ## Supported Frameworks
 
