@@ -48,9 +48,16 @@ Coming soon.
 ### Manual
 
 1. Download the latest ZIP from the Releases page.
-2. Open **Settings → Plugins → ⚙ → Install Plugin from Disk...**
+2. Open **Settings → Plugins → ⠇ → Install Plugin from Disk...**
 3. Select the ZIP file.
 4. Restart PhpStorm.
+
+### Change JSON files location
+1. Once installed there should be a new item under  **Settings → Tools**.
+2. **Settings → Tools → Translation Navigation**.
+3. There you'll find **Translation directory path:**
+4. Here you can change the relative path of your translations directory (default is **app/languages**).
+5. Make sure that the chose path is a relative path! Then click APPLY.
 
 ## Supported Frameworks
 
