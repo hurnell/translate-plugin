@@ -48,9 +48,11 @@ Coming soon.
 ### Manual
 
 1. Download the latest ZIP from the Releases page.
-2. Open **Settings → Plugins → ⠇ → Install Plugin from Disk...**
-3. Select the ZIP file.
-4. Restart PhpStorm.
+2. Open **Settings → Plugins**.
+3. Click the **gear (⚙)** or **More Actions (⋮)** menu.
+4. Choose **Install Plugin from Disk...**
+5. Select the ZIP file.
+6. Restart PhpStorm.
 
 ### Change JSON files location
 1. Once installed there should be a new item under  **Settings → Tools**.
